@@ -4,6 +4,8 @@ dotenv.config();
 const app = express();
 app.use(express.json())
 app.use(express.static("public"))
+const DatabaseConexion =require("./database/DatabaseConexion")
+const database = new DatabaseConexion();
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
