@@ -18,7 +18,7 @@ class DatabaseConexion {
     try {
       if (!this.isConnected) {
         const uri = `mongodb://${username}:${password}@${host}:${port}`;
-        await mongoose.createConnection(uri, {dbName:"auth",});
+        await mongoose.createConnection(uri, {dbName:"auth",}).asPromise();
         this.isConnected = true;
         console.log('Conexión exitosa');
       }
